@@ -159,7 +159,6 @@ class WakuNodeManager:
         response = requests.get(f"{base_url}/debug/v1/info")
         data = response.json()
         print(data["enrUri"])
-        time.sleep(10)
         return data["enrUri"]
 
 def main():
@@ -183,7 +182,7 @@ def main():
 
     # Start the second node
     manager.start_waku_node2()
-    time.sleep(50)  # Adding delay after starting the second node
+    time.sleep(5)  # Adding delay after starting the second node
 
     # Subscribe to a topic on the second node
     #manager.subscribe_to_topic("/my-app/2/chatroom-1/proto", manager.base_url_node2)
